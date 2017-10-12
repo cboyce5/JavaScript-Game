@@ -2,24 +2,45 @@
 
 <html lang="en">
 
-	<head>
-		<title>JavaScript Game</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="blockbreaker.css" />
-	</head>
+  <head>
+    <title>JavaScript Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="blockbreaker.css" />
+    <link rel="stylesheet" type="text/css" href="highscore.css" />
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="HighscoreAPI.js"></script>
+  </head>
 
-	<body>
-	
-	<header>
-	</header>
-	
-	<section>
-		<canvas id="myCanvas" width="600" height="600" style="border:1px solid #000000;">
-		Your browser does not support the HTML5 canvas tag.
-		</canvas>
-		<script src="blockbreaker.js"></script>
-	</section>
-	
-	</body>
+  <body>
+
+    <header>
+    </header>
+
+    <div id="highdiv">
+      <table id="hightable">
+        <tr>
+          <th>User</th>
+          <th>Score</th>
+        </tr>
+
+      </table>
+      <table id="myhightable">
+        <tr>
+          <th colspan="2">Your High Score</th>
+        </tr>
+        <tr id="myhighscore">
+          <td colspan="2">You don't have one yet!</td>
+        </tr>
+      </table>
+    </div>
+
+    <section>
+      <canvas id="myCanvas" width="600" height="600" style="border:1px solid #000000;">
+        Your browser does not support the HTML5 canvas tag.
+      </canvas>
+      <script src="blockbreaker.js"></script>
+    </section>
+
+  </body>
 </html>
