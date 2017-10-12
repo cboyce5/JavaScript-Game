@@ -1,3 +1,5 @@
+update_scores();
+
 var canvas = document.getElementById("myCanvas");
 var context = canvas.getContext("2d");
 
@@ -122,7 +124,8 @@ function checkCollisions() {
 		resetBall();
 		balls--;
 		if (balls == 0) {
-			alert("Game Over. You Lose.");
+      highscore(score);
+			alert("Game Over. You Lose. Your score: " + score);
 		}
 	}
 	else if (y + 25 > 560) {	//paddle collision
@@ -158,7 +161,8 @@ function timer() {
 		}
 	}
 	if (done) {
-		alert("Game Over. You Win.")
+    highscore(score);
+		alert("Game Over. You Win. Your score: " + score)
 	}
 }
 
