@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/21089959/detecting-collision-of-rectangle-with-circle
