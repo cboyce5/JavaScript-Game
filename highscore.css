@@ -18,10 +18,19 @@
 }
 
 #highdiv{
+    float: right;
     background-color: #1a6ecc;
-    width:50%;
-    margin:auto;
+    width: 40%;
+    margin-top: 10px;
+    margin-right: 40px;
     border-radius: 16px;
     padding:8px;
-    margin-top: 16px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  #highdiv {
+    float: none;
+    margin: 20px auto;
+  }
 }
