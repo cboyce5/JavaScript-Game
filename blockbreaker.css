@@ -1,11 +1,26 @@
+body {
+  background-color: #02669F;
+}
+
 h1 {
-  margin-top: 20px;
+  margin-top: 40px;
   text-align: center;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   animation-name: title-animate;
   animation-duration: 4s;
   animation-iteration-count: infinite;
   transition: font 0.5s ease;
+}
+
+header {
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 60%;
+  height: 120px;
+  margin:auto;
+  background-color: orange;
+  background: linear-gradient(yellow, orange);
+  
 }
 
 h1:hover {
@@ -21,8 +36,12 @@ h1:hover {
 }
 
 #myCanvas {
+  display: block;
+  margin-left: 20%;
   margin-top: 10px;
-  margin-left: 40px;
+  background-color: #F7D130;
+  background: linear-gradient( #00AEA6,#F67800);
+  border-radius: 20px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -34,3 +53,26 @@ h1:hover {
     display: block;
   }
 }
+
+#howToPlay {
+  width: 60%;
+  height: 200px;
+  border: 5px dashed red;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 20%;
+  background-color: #f77700;
+}
+
+#howToPlay p {
+  margin: 5px 20px;
+}
+
+#howToPlay div {
+  width: 33%;
+  text-align: center;
+  float: left;
+}
+
+
+

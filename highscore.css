@@ -19,12 +19,14 @@
 
 #highdiv{
     float: right;
-    background-color: #1a6ecc;
-    width: 40%;
+    background-color: #F75B92;
+    width: 26%;
     margin-top: 10px;
-    margin-right: 40px;
-    border-radius: 16px;
+    margin-right: 20%;
+	border: 1px solid blue;
+    border-radius: 20px;
     padding:8px;
+	height: 585px;
 }
 
 
