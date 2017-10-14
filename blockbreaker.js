@@ -16,7 +16,7 @@ var colors = ["#ff0000", "#ffff00", "#00ff00", "#0000ff", "#810081", "#000000"];
 var score = 0;
 var scoreModifier = 1;
 
-var balls = 2;
+var balls = 3;
 
 var paddleX = 250;
 
@@ -104,7 +104,11 @@ function RectCircleColliding(rect, state){
 
     var dxx=distX-rect.w/2;
     var dyy=distY-rect.h/2;
-    return (dxx*dxx+dyy*dyy<=(25*25));
+	if (dxx*dxx+dyy*dyy<=(25*25) && state) {
+		dx = -1 * dx;
+		dy = -1 * dy;
+		return (true);
+	}
 }
 
 // Checks collisions between window sides, paddle, and blocks.
@@ -122,14 +126,16 @@ function checkCollisions() {
 		timerRunning = false;
 		clearInterval(timerHandle);
 		resetBall();
-		balls--;
-		if (balls == 0) {
-      highscore(score);
-			$("#endGame").show("fast", function(){alert("Game Over. You Lose. Your score: " + score);});
+		if (balls >= 1) {
+			balls--;
+		}
+		if ( balls == 0) {
+			highscore(score);
+			location.reload();
 		}
 	}
 	else if (y + 25 > 560) {	//paddle collision
-		if ( x >= paddleX && x <= paddleX+100) {
+		if ( x >= paddleX && x <= paddleX+100 && y <= 580) {
 			dy = dy * -1;
 			scoreModifier = 1;
 		}
@@ -162,7 +168,7 @@ function timer() {
 	}
 	if (done) {
     highscore(score);
-		$("#endGame").show("fast", function() {alert("Game Over. You Win. Your score: " + score);});
+		location.reload();
 	}
 }
 
@@ -181,18 +187,26 @@ function keyPress(event) {
 			if (paddleX < 0) {
 				paddleX = 0;
 			}
+			if (!timerRunning) {
+				x -=8;
+			}
 			context.clearRect(0, 560, canvas.width, 20);
 			context.fillStyle = "#000000";
 			context.fillRect(paddleX, 560, 100, 20);
+			draw();
 			break;
 		case 39:	//right arrow
 			paddleX += 8;
 			if (paddleX > 500) {
 				paddleX = 500;
 			}
+			if (!timerRunning) {
+				x +=8;
+			}
 			context.clearRect(0, 560, canvas.width, 20);
 			context.fillStyle = "#000000";
 			context.fillRect(paddleX, 560, 100, 20);
+			draw();
 			break;
 	}
 }
