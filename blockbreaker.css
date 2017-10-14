@@ -74,5 +74,21 @@ h1:hover {
   float: left;
 }
 
+#endGame {
+  width: 600px;
+  height: 600px;
+  border: 2px solid black;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 20%;
+  background-color: #F7D130;
+  background: linear-gradient( #00AEA6,#F67800);
+  border-radius: 20px;
+  text-align: center;
+  display: none;
+}
 
+#endGame h2 {
+  font-size: 100px;
+}
 

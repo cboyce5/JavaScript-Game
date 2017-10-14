@@ -125,7 +125,7 @@ function checkCollisions() {
 		balls--;
 		if (balls == 0) {
       highscore(score);
-			alert("Game Over. You Lose. Your score: " + score);
+			$("#endGame").show("fast", function(){alert("Game Over. You Lose. Your score: " + score);});
 		}
 	}
 	else if (y + 25 > 560) {	//paddle collision
@@ -148,8 +148,8 @@ function checkCollisions() {
 
 // Timer function for moving the ball once spacebar is pressed.
 function timer() {
-	x -= dx;
-	y -= dy;
+	x -= 5*dx;
+	y -= 5*dy;
 	checkCollisions();
 	draw();
 	var done = true;
@@ -162,7 +162,7 @@ function timer() {
 	}
 	if (done) {
     highscore(score);
-		alert("Game Over. You Win. Your score: " + score)
+		$("#endGame").show("fast", function() {alert("Game Over. You Win. Your score: " + score);});
 	}
 }
 
@@ -196,3 +196,7 @@ function keyPress(event) {
 			break;
 	}
 }
+
+$("#endGame").dblclick(function(){
+	$("#endGame").hide("slow");
+});
